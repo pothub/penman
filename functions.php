@@ -261,12 +261,239 @@ add_shortcode('myphp', 'my_php_Include');
 function form_post() {
 	echo "aa";
 	// if(isset($_POST)){
-		echo $_POST['name_'];
+	echo $_POST['name_'];
 	// 	$email = $_POST['email'];
 	// 	echo '<ul>';
 	// 	echo '<li>'.$name.'</li>'
 	// 		echo '<li>'.$email.'</li>'
 	// 		echo '</ul>';
-	}
+}
 // }
 add_shortcode('sc_form_post', 'form_post');
+
+function check_deadline_($attr) {
+	$today = new DateTime();
+	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
+	try{
+		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
+		$sql = 'select * from subjects';
+		foreach ($dbh->query($sql) as $row) {
+			if(strcmp($attr[0],$row['id_subject']) == 0){
+				// if (!is_null($row['apply_deadline'])){
+				if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+					print '<center><input type="button" value="お申し込みはこちらから" onClick="location.href=\''.$attr[1].'\'"></center>';
+				}
+				else{
+					print '<center>募集を締め切りました</center>';
+				}
+				print('<br />');
+			}
+		}
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+
+}
+add_shortcode('check_deadline', 'check_deadline_');
+
+$global_name_sub;
+function show_subject_detile_($attr) {
+	global $global_name_sub;
+	try{
+		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
+		$sql = 'select * from subjects';
+		foreach ($dbh->query($sql) as $row) {
+			if(strcmp($attr[0],$row['id_subject']) == 0){
+				if (is_null($row['id_parent'])){ // if no child
+					$id = row['id_subject'];
+					print '<center>'.$row['name_subject'].'</center>';
+					print('・開講日');
+					print('<br />');
+					print($row['opening_date1']);
+					if (!is_null($row['opening_date2'])){
+						print('、'.$row['opening_date2']);
+					}
+					print('<br />');
+					print('<br />');
+
+					print('・開講時間');
+					print('<br />');
+					print($row['opening_time']);
+					print('<br />');
+					print('<br />');
+
+				}else{
+					foreach ($dbh->query($sql) as $row_p) {
+						if(strcmp($row_p['id_subject'],$row['id_parent']) == 0){
+							print '<center>'.$row_p['name_subject'].' '.$row['name_child'].'</center>';
+							$global_name_sub = $row_p['name_subject'].' '.$row['name_child'];
+							print('・開講日');
+							print('<br />');
+							print($row['opening_date1']);
+							if (!is_null($row['opening_date2'])){
+								print('、'.$row['opening_date2']);
+							}
+							print('<br />');
+							print('<br />');
+
+							print('・開講時間');
+							print('<br />');
+							print($row_p['opening_time']);
+							print('<br />');
+							print('<br />');
+							echo do_shortcode('[check_deadline T01]');
+						}
+					}
+
+				}
+			}
+		}
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+}
+add_shortcode('show_subject_detile', 'show_subject_detile_');
+
+function wpcf7_main_validation_filter( $result, $tag ) {
+	$type = $tag['type'];
+	$name = $tag['name'];
+	$_POST[$name] = trim( strtr( (string) $_POST[$name], "\n", " " ) );
+	if ( 'email' == $type || 'email*' == $type ) {
+		if (preg_match('/(.*)_confirm$/', $name, $matches)){
+			$target_name = $matches[1];
+			if ($_POST[$name] != $_POST[$target_name]) {
+				if (method_exists($result, 'invalidate')) {
+					$result->invalidate( $tag,"確認用のメールアドレスが一致していません");
+				} else {
+					$result['valid'] = false;
+					$result['reason'][$name] = '確認用のメールアドレスが一致していません';
+				}
+			}
+		}
+	}
+	return $result;
+}
+add_filter( 'wpcf7_validate_email', 'wpcf7_main_validation_filter', 11, 2 );
+add_filter( 'wpcf7_validate_email*', 'wpcf7_main_validation_filter', 11, 2 );
+
+
+
+
+// Contact Form 7 に独自チェックリストを追加
+add_action( 'wpcf7_init', 'wpcf7_add_form_tag_catlist' );
+
+// 独自タグ[cat_list]を定義（末尾*は必須項目用）
+function wpcf7_add_form_tag_catlist() {
+	wpcf7_add_form_tag( array( 'cat_list', 'cat_list*' ),
+		'wpcf7_pagelist_form_tag_handler', // 下で設定する関数名が入る
+		array(
+			'name-attr' => true,
+			'selectable-values' => true,
+			'multiple-controls-container' => true,
+		)
+	);
+}
+
+// 独自タグの内容を定義する関数
+function wpcf7_pagelist_form_tag_handler( $tag ) {
+	if ( empty( $tag->name ) ) {
+		return '';
+	}
+
+	$validation_error = wpcf7_get_validation_error( $tag->name );
+	$class = wpcf7_form_controls_class( $tag->type );
+
+	if ( $validation_error ) {
+		$class .= ' wpcf7-not-valid';
+	}
+
+	// オプションの設定
+	$use_label_element  = $tag->has_option( 'use_label_element' );
+	$exclusive          = $tag->has_option( 'exclusive' );
+	$multiple           = false;
+
+	if ( 'cat_list' == $tag->basetype ) {
+		$multiple = ! $exclusive;
+	}
+
+	if ( $exclusive ) {
+		$class .= ' wpcf7-exclusive-checkbox';
+	}
+
+	$atts = array();
+
+	$atts['class']  = $tag->get_class_option( $class );
+	$atts['id']     = $tag->get_id_option();
+
+	$html = '';
+	$count = 0;
+
+	// 表示の設定
+	// foreach($posts as $post) {
+	$class = 'wpcf7-list-item';
+
+	$key        = $count;
+	// $value      = "valueeeeeeee";
+	global $global_name_sub;
+	$value      = $global_name_sub;
+	$label      = $value;
+
+	$item_atts = array(
+		'type'      => 'checkbox',
+		'name'      => $tag -> name . ( $multiple ? '[]' : '' ),
+		'value'     => $value,
+	);
+
+	$item_atts = wpcf7_format_atts( $item_atts );
+
+	$item = sprintf(
+		'<input %2$s checked="checked" onclick="return false;" /><span class="wpcf7-list-item-label">%1$s</span>',esc_html( $label ), $item_atts );
+
+	if ( $use_label_element ) {
+		$item = '<label>' . $item . '</label>';
+	}
+
+	$count += 1;
+
+	if ( 1 == $count ) {
+		$class .= ' first';
+	}
+
+	if ( count( $children ) == $count ) { // last round
+		$class .= ' last';
+	}
+
+	$item = '<span class="' . esc_attr( $class ) . '">' . $item . '</span>';
+	$html .= $item;
+	// } // foreach
+
+	$atts = wpcf7_format_atts( $atts );
+
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><span %2$s>%3$s</span>%4$s</span>',
+		sanitize_html_class( $tag->name ), $atts, $html, $validation_error );
+
+	// postをリセット
+	wp_reset_postdata();
+
+	return $html;
+}
+
+// バリデートの設定
+add_filter( 'wpcf7_validate_cat_list', 'wpcf7_cat_list_validation_filter', 10, 2 );
+add_filter( 'wpcf7_validate_cat_list*', 'wpcf7_cat_list_validation_filter', 10, 2 );
+
+function wpcf7_cat_list_validation_filter( $result, $tag ) {
+	$type = $tag->type;
+	$name = $tag->name;
+	$is_required = $tag->is_required() || 'cat_list*' == $type; // 'cat_list*' は独自タグ
+	$value = isset( $_POST[$name] ) ? (array) $_POST[$name] : array();
+
+	if ( $is_required && empty( $value ) ) {
+		$result->invalidate( $tag, wpcf7_get_message( 'invalid_required' ) );
+	}
+
+	return $result;
+}
