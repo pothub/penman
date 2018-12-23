@@ -78,13 +78,6 @@
 				</div>
       <?php } ?>
 
-		<div class="site-info">
-			<span class="copy-right-text"><?php echo $copyright; ?></span>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'penman' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'penman' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			 <?php esc_html_e('Theme: Penman by','penman') ?>
-				<a href="<?php echo esc_url( __( 'https://www.templatesell.com', 'penman' ) ); ?>"> <?php esc_html_e('Template Sell.','penman') ?>
-		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

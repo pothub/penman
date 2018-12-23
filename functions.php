@@ -249,113 +249,6 @@ function penman_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'penman_excerpt_more');
 
-function my_php_Include($params = array()) {
-	extract(shortcode_atts(array('file' => 'default'), $params));
-	ob_start();
-	include(STYLESHEETPATH . "/$file.php");
-	return ob_get_clean();
-}
-add_shortcode('myphp', 'my_php_Include');
-
-
-function form_post() {
-	echo "aa";
-	// if(isset($_POST)){
-	echo $_POST['name_'];
-	// 	$email = $_POST['email'];
-	// 	echo '<ul>';
-	// 	echo '<li>'.$name.'</li>'
-	// 		echo '<li>'.$email.'</li>'
-	// 		echo '</ul>';
-}
-// }
-add_shortcode('sc_form_post', 'form_post');
-
-function check_deadline_($attr) {
-	$today = new DateTime();
-	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
-	try{
-		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
-		$sql = 'select * from subjects';
-		foreach ($dbh->query($sql) as $row) {
-			if(strcmp($attr[0],$row['id_subject']) == 0){
-				// if (!is_null($row['apply_deadline'])){
-				if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
-					print '<center><input type="button" value="お申し込みはこちらから" onClick="location.href=\''.$attr[1].'\'"></center>';
-				}
-				else{
-					print '<center>募集を締め切りました</center>';
-				}
-				print('<br />');
-			}
-		}
-	}catch (PDOException $e){
-		print('Error:'.$e->getMessage());
-		die();
-	}
-
-}
-add_shortcode('check_deadline', 'check_deadline_');
-
-$global_name_sub;
-function show_subject_detile_($attr) {
-	global $global_name_sub;
-	try{
-		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
-		$sql = 'select * from subjects';
-		foreach ($dbh->query($sql) as $row) {
-			if(strcmp($attr[0],$row['id_subject']) == 0){
-				if (is_null($row['id_parent'])){ // if no child
-					$id = row['id_subject'];
-					print '<center>'.$row['name_subject'].'</center>';
-					print('・開講日');
-					print('<br />');
-					print($row['opening_date1']);
-					if (!is_null($row['opening_date2'])){
-						print('、'.$row['opening_date2']);
-					}
-					print('<br />');
-					print('<br />');
-
-					print('・開講時間');
-					print('<br />');
-					print($row['opening_time']);
-					print('<br />');
-					print('<br />');
-
-				}else{
-					foreach ($dbh->query($sql) as $row_p) {
-						if(strcmp($row_p['id_subject'],$row['id_parent']) == 0){
-							print '<center>'.$row_p['name_subject'].' '.$row['name_child'].'</center>';
-							$global_name_sub = $row_p['name_subject'].' '.$row['name_child'];
-							print('・開講日');
-							print('<br />');
-							print($row['opening_date1']);
-							if (!is_null($row['opening_date2'])){
-								print('、'.$row['opening_date2']);
-							}
-							print('<br />');
-							print('<br />');
-
-							print('・開講時間');
-							print('<br />');
-							print($row_p['opening_time']);
-							print('<br />');
-							print('<br />');
-							echo do_shortcode('[check_deadline T01]');
-						}
-					}
-
-				}
-			}
-		}
-	}catch (PDOException $e){
-		print('Error:'.$e->getMessage());
-		die();
-	}
-}
-add_shortcode('show_subject_detile', 'show_subject_detile_');
-
 function wpcf7_main_validation_filter( $result, $tag ) {
 	$type = $tag['type'];
 	$name = $tag['name'];
@@ -377,9 +270,6 @@ function wpcf7_main_validation_filter( $result, $tag ) {
 }
 add_filter( 'wpcf7_validate_email', 'wpcf7_main_validation_filter', 11, 2 );
 add_filter( 'wpcf7_validate_email*', 'wpcf7_main_validation_filter', 11, 2 );
-
-
-
 
 // Contact Form 7 に独自チェックリストを追加
 add_action( 'wpcf7_init', 'wpcf7_add_form_tag_catlist' );
@@ -497,3 +387,128 @@ function wpcf7_cat_list_validation_filter( $result, $tag ) {
 
 	return $result;
 }
+function my_php_Include($params = array()) {
+	extract(shortcode_atts(array('file' => 'default'), $params));
+	ob_start();
+	include(STYLESHEETPATH . "/$file.php");
+	return ob_get_clean();
+}
+add_shortcode('myphp', 'my_php_Include');
+
+
+function form_post() {
+	echo "aa";
+	// if(isset($_POST)){
+	echo $_POST['name_'];
+	// 	$email = $_POST['email'];
+	// 	echo '<ul>';
+	// 	echo '<li>'.$name.'</li>'
+	// 		echo '<li>'.$email.'</li>'
+	// 		echo '</ul>';
+}
+// }
+add_shortcode('sc_form_post', 'form_post');
+
+function check_deadline_($attr) {
+	$today = new DateTime();
+	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
+	try{
+		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
+		$sql = 'select * from subjects';
+		foreach ($dbh->query($sql) as $row) {
+			if(strcmp($attr[0],$row['id_subject']) == 0){
+				// if (!is_null($row['apply_deadline'])){
+				if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+					print '<center><input type="button" value="お申し込みはこちらから" onClick="location.href=\''.$attr[1].'\'"></center>';
+				}
+				else{
+					print '<center>募集を締め切りました</center>';
+				}
+				print('<br />');
+			}
+		}
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+
+}
+add_shortcode('check_deadline', 'check_deadline_');
+
+$global_name_sub;
+function show_subject_detile_($attr) {
+	global $global_name_sub;
+	try{
+		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
+		$sql = 'select * from subjects';
+		foreach ($dbh->query($sql) as $row) {
+			if(strcmp($attr[0],$row['id_subject']) == 0){
+				if (is_null($row['id_parent'])){ // if no child
+					$id = row['id_subject'];
+					print '<center>'.$row['name_subject'].'</center>';
+					print('・開講日');
+					print('<br />');
+					print($row['opening_date1']);
+					if (!is_null($row['opening_date2'])){
+						print('、'.$row['opening_date2']);
+					}
+					print('<br />');
+					print('<br />');
+
+					print('・開講時間');
+					print('<br />');
+					print($row['opening_time']);
+					print('<br />');
+					print('<br />');
+
+				}else{
+					foreach ($dbh->query($sql) as $row_p) {
+						if(strcmp($row_p['id_subject'],$row['id_parent']) == 0){
+							print '<center>'.$row_p['name_subject'].' '.$row['name_child'].'</center>';
+							$global_name_sub = $row_p['name_subject'].' '.$row['name_child'];
+							print('・開講日');
+							print('<br />');
+							print($row['opening_date1']);
+							if (!is_null($row['opening_date2'])){
+								print('、'.$row['opening_date2']);
+							}
+							print('<br />');
+							print('<br />');
+
+							print('・開講時間');
+							print('<br />');
+							print($row_p['opening_time']);
+							print('<br />');
+							print('<br />');
+							echo do_shortcode('[check_deadline T01]');
+						}
+					}
+
+				}
+			}
+		}
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+}
+add_shortcode('show_subject_detile', 'show_subject_detile_');
+
+function show_nameList_() {
+	try{
+		ob_start();
+		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
+		$sql = 'select * from subjects';
+		foreach ($dbh->query($sql) as $row) {
+			if (!is_null($row['name_subject'])){
+				print '<a href="'.$row['URL'].'">'.$row['name_subject'].'</a><br />';
+				print('<br />');
+			}
+		}
+		return ob_get_clean();
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+}
+add_shortcode('show_nameList', 'show_nameList_');
