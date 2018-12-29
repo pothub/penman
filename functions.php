@@ -389,18 +389,22 @@ function form_post() {
 // }
 add_shortcode('sc_form_post', 'form_post');
 
+$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
+// $sql_nagoya = 'select * from subjects_hiroshima';
+$sql_nagoya = 'select * from subjects_nagoya';
+
 function check_deadline_($attr) {
 	$today = new DateTime();
 	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
 	try{
 		ob_start();
-		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
-		$sql = 'select * from subjects';
-		foreach ($dbh->query($sql) as $row) {
+		global $dbh;
+		global $sql_nagoya;
+		foreach ($dbh->query($sql_nagoya) as $row) {
 			if(strcmp($attr[0],$row['id_subject']) == 0){
 				// if (!is_null($row['apply_deadline'])){
 				if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
-					print '<center>お申し込みは以下のフォームから</center>';
+					print '<center>お申し込み受付中<br>申し込まれる方は以下のフォームに入力して、最終行の送信ボタンを押してください。</center>';
 					echo do_shortcode('[contact-form-7 id="398" title="cource_apply_template"]');
 				}
 				else{
@@ -423,76 +427,65 @@ function show_subject_detile_($attr) {
 	global $global_name_sub;
 	global $global_fee;
 	try{
-		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
-		$sql = 'select * from subjects';
-		foreach ($dbh->query($sql) as $row) {
+		global $dbh;
+		global $sql_nagoya;
+		$mode_parent_child;
+		foreach ($dbh->query($sql_nagoya) as $row) {
 			if(strcmp($attr[0],$row['id_subject']) == 0){
 				if (is_null($row['id_parent'])){ // if no child
-					$id = row['id_subject'];
+					$mode_parent_child = 0;
 					print '<center>'.$row['name_subject'].'</center>';
 					$global_name_sub = $row['name_subject'];
-					print('・開講日');
-					print('<br />');
-					print($row['opening_date1']);
-					if (!is_null($row['opening_date2'])){
-						print('、'.$row['opening_date2']);
-					}
-					print('<br />');
-					print('<br />');
-
-					print('・開講時間');
-					print('<br />');
-					print($row['opening_time']);
-					print('<br />');
-					print('<br />');
-					print('・受講申込期間');
-					print('<br />');
-					print($row['apply_deadline'].' まで');
-					print('<br />');
-					print('<br />');
-
-					print('・受講料');
-					print('<br />');
-					print($row['fee']);
-					$global_fee = $row['fee'];
-					print('<br />');
-					print('<br />');
-
-				}else{
-					foreach ($dbh->query($sql) as $row_p) {
+				}
+				else{
+					$mode_parent_child = 1;
+					foreach ($dbh->query($sql_nagoya) as $row_p) {
 						if(strcmp($row_p['id_subject'],$row['id_parent']) == 0){
 							print '<center>'.$row_p['name_subject'].' '.$row['name_child'].'</center>';
 							$global_name_sub = $row_p['name_subject'].' '.$row['name_child'];
-							print('・開講日');
-							print('<br />');
-							print($row['opening_date1']);
-							if (!is_null($row['opening_date2'])){
-								print('、'.$row['opening_date2']);
-							}
-							print('<br />');
-							print('<br />');
-
-							print('・開講時間');
-							print('<br />');
-							print($row_p['opening_time']);
-							print('<br />');
-							print('<br />');
-							print('・受講申込期間');
-							print('<br />');
-							print($row['apply_deadline'].' まで');
-							print('<br />');
-							print('<br />');
-
-							print('・受講料');
-							print('<br />');
-							print($row_p['fee']);
-							$global_fee = $row_p['fee'];
-							print('<br />');
-							print('<br />');
+							$opening_time_ = $row_p['opening_time'];
+							$fee_ = $row_p['fee'];
 						}
 					}
-
 				}
+
+
+				print('・開講日');
+				print('<br />');
+				print($row['opening_date_begin']);
+				print('<br />');
+				print('<br />');
+
+				print('・開講時間');
+				print('<br />');
+				if($mode_parent_child == 0){
+					print($row['opening_time']);
+				}
+				else{
+					print($opening_time_);
+				}
+
+				print('<br />');
+				print('<br />');
+				print('・受講申込期間');
+				print('<br />');
+				print($row['apply_deadline'].' まで');
+				print('<br />');
+				print('<br />');
+
+				print('・受講料');
+				print('<br />');
+				if($mode_parent_child == 0){
+					print($row['fee']);
+					$global_fee = $row['fee'];
+				}
+				else{
+					print($fee_);
+					$global_fee = $fee_;
+				}
+				print('<br />');
+				print('<br />');
+
 			}
 		}
 	}catch (PDOException $e){
@@ -502,21 +495,32 @@ function show_subject_detile_($attr) {
 }
 add_shortcode('show_subject_detile', 'show_subject_detile_');
 
-function show_nameList_() {
+function show_subjetList_nagoya_($attr) {
 	try{
 		ob_start();
-		$dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
-		$sql = 'select * from subjects';
-		foreach ($dbh->query($sql) as $row) {
-			if (!is_null($row['name_subject'])){
-				print '<u><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></u><br />';
-				print('<br />');
+?>
+<table border="1">
+<tr>
+<?php
+		global $dbh;
+		global $sql_nagoya;
+		$num = 0;
+		foreach ($dbh->query($sql_nagoya) as $row) {
+			if ((!is_null($row['name_subject']) and ($row['type'] == $attr[0]))){
+				print '<td><center><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></center></td>';
+				$num += 1;
+				if($num %3 == 0){
+					echo '<tr>';
+				}
 			}
 		}
+?>
+</table>
+<?php
 		return ob_get_clean();
 	}catch (PDOException $e){
 		print('Error:'.$e->getMessage());
 		die();
 	}
 }
-add_shortcode('show_nameList', 'show_nameList_');
+add_shortcode('show_subjetList_nagoya', 'show_subjetList_nagoya_');
