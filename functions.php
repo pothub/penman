@@ -300,9 +300,6 @@ function wpcf7_pagelist_form_tag_handler( $tag ) {
 	$use_label_element  = $tag->has_option( 'use_label_element' );
 	$exclusive          = $tag->has_option( 'exclusive' );
 	$multiple           = false;
-	// if ( 'cat_list' == $tag->basetype ) {
-	// 	$multiple = ! $exclusive;
-	// }
 	if ( $exclusive ) {
 		$class .= ' wpcf7-exclusive-checkbox';
 	}
@@ -311,40 +308,53 @@ function wpcf7_pagelist_form_tag_handler( $tag ) {
 	$atts['id']     = $tag->get_id_option();
 	$html = '';
 	$count = 0;
-
-	$class = 'wpcf7-list-item';
-	$key        = $count;
-	global $global_name_sub;
-	global $global_fee;
-	if($tag->has_option( 'subject_name' )){
-		$value      = $global_name_sub;
-	}
-	if($tag->has_option( 'subject_fee' )){
-		$value      = $global_fee;
+	$roop_num = 1;
+	if($tag->has_option( 'location_both' )){
+		$roop_num = 2;
 	}
 
-	$label      = $value;
-	$item_atts = array(
-		'type'      => 'checkbox',
-		'name'      => $tag -> name . ( $multiple ? '[]' : '' ),
-		'value'     => $value,
-	);
-	$item_atts = wpcf7_format_atts( $item_atts );
-	$item = sprintf(
-		'<input %2$s checked="checked" onclick="return false;" /><span class="wpcf7-list-item-label">%1$s</span>',esc_html( $label ), $item_atts );
-	if ( $use_label_element ) {
-		$item = '<label>' . $item . '</label>';
-	}
-	$count += 1;
-	if ( 1 == $count ) {
-		$class .= ' first';
-	}
-	if ( count( $children ) == $count ) { // last round
-		$class .= ' last';
-	}
-	$item = '<span class="' . esc_attr( $class ) . '">' . $item . '</span>';
-	$html .= $item;
-	// } // foreach
+	for ($i = 1; $i <= $roop_num; $i++) {
+		$class = 'wpcf7-list-item';
+		$key        = $count;
+		global $global_name_sub;
+		global $global_fee;
+		if($tag->has_option( 'subject_name' )){
+			$value      = $global_name_sub;
+		}
+		if($tag->has_option( 'subject_fee' )){
+			$value      = $global_fee."円(税込)";
+		}
+		if($tag->has_option( 'location_both' )){
+			if($i == 1){
+				$value      = "円(税込)";
+			}
+			if($i == 2){
+				$value      = "円(aaa税込)";
+			}
+		}
+
+		$label      = $value;
+		$item_atts = array(
+			'type'      => 'radio',
+			'name'      => $tag -> name . ( $multiple ? '[]' : '' ),
+			'value'     => $value,
+		);
+		$item_atts = wpcf7_format_atts( $item_atts );
+		$item = sprintf(
+			'<input %2$s checked="checked" /><span class="wpcf7-list-item-label">%1$s</span>',esc_html( $label ), $item_atts );
+		if ( $use_label_element ) {
+			$item = '<label>' . $item . '</label>';
+		}
+		$count += 1;
+		if ( 1 == $count ) {
+			$class .= ' first';
+		}
+		if ( count( $children ) == $count ) { // last round
+			$class .= ' last';
+		}
+		$item = '<span class="' . esc_attr( $class ) . '">' . $item . '</span>';
+		$html .= $item;
+	} // foreach
 	$atts = wpcf7_format_atts( $atts );
 	$html = sprintf(
 		'<span class="wpcf7-form-control-wrap %1$s"><span %2$s>%3$s</span>%4$s</span>',
@@ -391,7 +401,7 @@ add_shortcode('sc_form_post', 'form_post');
 
 $dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
 // $sql_nagoya = 'select * from subjects_hiroshima';
-$sql_nagoya = 'select * from subjects_nagoya';
+$sql_nagoya = 'select * from subjects_nagoya ORDER BY id_order ASC';
 
 function check_deadline_($attr) {
 	$today = new DateTime();
@@ -426,68 +436,47 @@ function show_subject_detile_($attr) {
 	ob_start();
 	global $global_name_sub;
 	global $global_fee;
+	global $dbh;
 	try{
-		global $dbh;
-		global $sql_nagoya;
-		$mode_parent_child;
-		foreach ($dbh->query($sql_nagoya) as $row) {
-			if(strcmp($attr[0],$row['id_subject']) == 0){
-				if (is_null($row['id_parent'])){ // if no child
-					$mode_parent_child = 0;
-					print '<center>'.$row['name_subject'].'</center>';
-					$global_name_sub = $row['name_subject'];
-				}
-				else{
-					$mode_parent_child = 1;
-					foreach ($dbh->query($sql_nagoya) as $row_p) {
-						if(strcmp($row_p['id_subject'],$row['id_parent']) == 0){
-							print '<center>'.$row_p['name_subject'].' '.$row['name_child'].'</center>';
-							$global_name_sub = $row_p['name_subject'].' '.$row['name_child'];
-							$opening_time_ = $row_p['opening_time'];
-							$fee_ = $row_p['fee'];
-						}
-					}
-				}
-
-
-				print('・開講日');
-				print('<br />');
-				print($row['opening_date_begin']);
-				print('<br />');
-				print('<br />');
-
-				print('・開講時間');
-				print('<br />');
-				if($mode_parent_child == 0){
-					print($row['opening_time']);
-				}
-				else{
-					print($opening_time_);
-				}
-
-				print('<br />');
-				print('<br />');
-				print('・受講申込期間');
-				print('<br />');
-				print($row['apply_deadline'].' まで');
-				print('<br />');
-				print('<br />');
-
-				print('・受講料');
-				print('<br />');
-				if($mode_parent_child == 0){
-					print($row['fee']);
-					$global_fee = $row['fee'];
-				}
-				else{
-					print($fee_);
-					$global_fee = $fee_;
-				}
-				print('<br />');
-				print('<br />');
-
-			}
+		$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$attr[0]. "'";
+		foreach ($dbh->query($sql_nagoya_) as $row){}
+		$opening_date_begin_ = $row['opening_date_begin'];
+		$apply_deadline_ = $row['apply_deadline'];
+		$name_child_ = $row['name_child'];
+		if (is_null($row['id_parent'])){ // if no child
+			$global_name_sub = $row['name_subject'];
+			$global_fee = $row['fee'];
 		}
+		else{
+			$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
+			foreach ($dbh->query($sql_nagoya_) as $row){}
+			$global_name_sub = $row['name_subject'].'_'.$name_child_;
+			$global_fee = $row['fee'];
+		}
+
+		print('・開講日<br />');
+		print($opening_date_begin_.'<br /><br />');
+
+		print('・開講時間<br />');
+		print($row['opening_time'].'<br /><br />');
+
+		print('・受講申込期間<br />');
+		print($apply_deadline_.' まで<br /><br />');
+
+		print('・受講料<br />');
+		print($global_fee.'円(税込)<br /><br />');
+
+		print('・定員(先着順)<br />');
+		print($row['capacity'].'名<br /><br />');
+
+		print('・会場<br />');
+		print($row['location'].'<br /><br />');
+
+		print('・講師<br />');
+		print($row['lecturer'].'<br /><br />');
+
+		print('・講座概要<br />');
+		print($row['course_outline'].'<br /><br />');
 	}catch (PDOException $e){
 		print('Error:'.$e->getMessage());
 		die();
@@ -507,7 +496,7 @@ function show_subjetList_nagoya_($attr) {
 		$num = 0;
 		foreach ($dbh->query($sql_nagoya) as $row) {
 			if ((!is_null($row['name_subject']) and ($row['type'] == $attr[0]))){
-				print '<td><center><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></center></td>';
+				print '<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td>';
 				$num += 1;
 				if($num %3 == 0){
 					echo '<tr>';
@@ -524,3 +513,53 @@ function show_subjetList_nagoya_($attr) {
 	}
 }
 add_shortcode('show_subjetList_nagoya', 'show_subjetList_nagoya_');
+
+function show_subjetSchedule_nagoya_() {
+	$sql_nagoya = 'select * from subjects_nagoya ORDER BY opening_date_begin ASC';
+
+	try{
+		ob_start();
+		global $dbh;
+		$prev_date = date("2018/3/1");
+		foreach ($dbh->query($sql_nagoya) as $row) {
+			if (!is_null($row['opening_date_begin'])){
+				if(date('n', strtotime($row['opening_date_begin'])) - date('n', strtotime($prev_date)) > 0){
+					print date('Y年n月の開講計画', strtotime($prev_date));
+					print '<br>';
+?>
+</table>
+<table border="1">
+<tr>
+<td>
+日付（曜日）
+<td>
+開始～終了時刻（集合時刻）
+<td>
+科目名
+<tr>
+<?php
+				}
+				// if(strtotime(date("2018/10/1")) < strtotime($row['opening_date_begin']) and
+				// 	strtotime($row['opening_date_begin']) < strtotime(date("2018/11/1"))){
+				// echo date('n', strtotime($row['opening_date_begin']));
+				if (is_null($row['id_parent'])){ // if no child
+					print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td><tr>';
+				}
+				else{
+					$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
+					foreach ($dbh->query($sql_nagoya_) as $row_p){}
+					print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></h4></u></td><tr>';
+				}
+				$prev_date = $row['opening_date_begin'];
+			}
+		}
+?>
+</table>
+<?php
+		return ob_get_clean();
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+}
+add_shortcode('show_subjetSchedule_nagoya', 'show_subjetSchedule_nagoya_');
