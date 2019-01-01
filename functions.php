@@ -453,7 +453,7 @@ function show_subject_detile_($attr) {
 	try{
 		$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$attr[0]. "'";
 		foreach ($dbh->query($sql_nagoya_) as $row){}
-		$opening_date_begin_ = $row['opening_date_begin'];
+		$opening_date_string_ = $row['opening_date_string'];
 		$apply_deadline_ = $row['apply_deadline'];
 		$name_child_ = $row['name_child'];
 		if (is_null($row['id_parent'])){ // if no child
@@ -471,7 +471,7 @@ function show_subject_detile_($attr) {
 		}
 
 		print('・開講日<br />');
-		print($opening_date_begin_.'<br /><br />');
+		print($opening_date_string_.'<br /><br />');
 
 		print('・開講時間<br />');
 		print($row['opening_time'].'<br /><br />');
@@ -531,6 +531,8 @@ function show_subjetList_nagoya_($attr) {
 add_shortcode('show_subjetList_nagoya', 'show_subjetList_nagoya_');
 
 function show_subjetSchedule_nagoya_() {
+	$today = new DateTime();
+	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
 	$sql_nagoya = 'select * from subjects_nagoya ORDER BY opening_date_begin ASC';
 
 	try{
@@ -555,16 +557,23 @@ function show_subjetSchedule_nagoya_() {
 <tr>
 <?php
 				}
-				// if(strtotime(date("2018/10/1")) < strtotime($row['opening_date_begin']) and
-				// 	strtotime($row['opening_date_begin']) < strtotime(date("2018/11/1"))){
-				// echo date('n', strtotime($row['opening_date_begin']));
 				if (is_null($row['id_parent'])){ // if no child
-					print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td><tr>';
+					if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+						print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
+					}
+					else{
+						print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td><tr>';
+					}
 				}
 				else{
 					$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
 					foreach ($dbh->query($sql_nagoya_) as $row_p){}
-					print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></h4></u></td><tr>';
+					if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+						print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
+					}
+					else{
+						print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></h4></u></td><tr>';
+					}
 				}
 				$prev_date = $row['opening_date_begin'];
 			}
@@ -579,3 +588,21 @@ function show_subjetSchedule_nagoya_() {
 	}
 }
 add_shortcode('show_subjetSchedule_nagoya', 'show_subjetSchedule_nagoya_');
+
+function show_subjetChildList_nagoya_($attr) {
+	try{
+		ob_start();
+		global $dbh;
+		global $sql_nagoya;
+		foreach ($dbh->query($sql_nagoya) as $row) {
+			if ($row['id_parent'] == $attr[0]){
+				print '<u><a href="'.$row['URL'].'">'.$row['name_child'].'</a></u> ';
+			}
+		}
+		return ob_get_clean();
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+}
+add_shortcode('show_subjetChildList_nagoya', 'show_subjetChildList_nagoya_');
