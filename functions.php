@@ -286,6 +286,7 @@ function wpcf7_add_form_tag_catlist() {
 }
 $global_name_sub;
 $global_fee;
+$global_location;
 // 独自タグの内容を定義する関数
 function wpcf7_pagelist_form_tag_handler( $tag ) {
 	if ( empty( $tag->name ) ) {
@@ -309,8 +310,11 @@ function wpcf7_pagelist_form_tag_handler( $tag ) {
 	$html = '';
 	$count = 0;
 	$roop_num = 1;
+	global $global_location;
 	if($tag->has_option( 'location_both' )){
-		$roop_num = 2;
+		if($global_location == 3){
+			$roop_num = 2;
+		}
 	}
 
 	for ($i = 1; $i <= $roop_num; $i++) {
@@ -325,11 +329,19 @@ function wpcf7_pagelist_form_tag_handler( $tag ) {
 			$value      = $global_fee."円(税込)";
 		}
 		if($tag->has_option( 'location_both' )){
-			if($i == 1){
-				$value      = "円(税込)";
+			if($global_location == 1){
+				$value      = "本会場（名古屋大学）";
 			}
-			if($i == 2){
-				$value      = "円(aaa税込)";
+			if($global_location == 2){
+				$value      = "東京会場";
+			}
+			if($global_location == 3){
+				if($i == 1){
+					$value      = "本会場（名古屋大学）";
+				}
+				if($i == 2){
+					$value      = "東京会場";
+				}
 			}
 		}
 
@@ -436,6 +448,7 @@ function show_subject_detile_($attr) {
 	ob_start();
 	global $global_name_sub;
 	global $global_fee;
+	global $global_location;
 	global $dbh;
 	try{
 		$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$attr[0]. "'";
@@ -446,12 +459,15 @@ function show_subject_detile_($attr) {
 		if (is_null($row['id_parent'])){ // if no child
 			$global_name_sub = $row['name_subject'];
 			$global_fee = $row['fee'];
+			$global_location = $row['location_choice'];
+
 		}
 		else{
 			$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
 			foreach ($dbh->query($sql_nagoya_) as $row){}
 			$global_name_sub = $row['name_subject'].'_'.$name_child_;
 			$global_fee = $row['fee'];
+			$global_location = $row['location_choice'];
 		}
 
 		print('・開講日<br />');
@@ -530,11 +546,11 @@ function show_subjetSchedule_nagoya_() {
 </table>
 <table border="1">
 <tr>
-<td>
+<td width="25%">
 日付（曜日）
-<td>
+<td width="25%">
 開始～終了時刻（集合時刻）
-<td>
+<td width="50%">
 科目名
 <tr>
 <?php
