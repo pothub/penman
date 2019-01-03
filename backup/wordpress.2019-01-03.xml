@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-<!-- generator="WordPress/5.0.2" created="2019-01-03 03:05" -->
+<!-- generator="WordPress/5.0.2" created="2019-01-03 13:28" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title></title>
 	<link>http://localhost</link>
 	<description></description>
-	<pubDate>Thu, 03 Jan 2019 03:05:27 +0000</pubDate>
+	<pubDate>Thu, 03 Jan 2019 13:28:32 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://localhost</wp:base_site_url>
@@ -2038,7 +2038,47 @@ todo
 
 &nbsp;
 <h4><strong>先端科目</strong></h4>
-[show_subjetList_nagoya 2]]]></content:encoded>
+[show_subjetList_nagoya 2]
+
+&nbsp;
+<h3>広島大学</h3>
+広島大学では，日ごろの研究教育成果を活かして，車載組込み領域の人材育成を提供します．広島大学の科目の特色は，製品開発の過程に着目して，円滑なプロジェクト管理や，情報共有をして，製品開発の信頼性を高めるための知識や技術，ノウハウを学ぶことができる点です．また，演習形式による実践的な学び続けも，大学院情報工学専攻全教員がサポートします．
+
+所在地：広島県東広島市（<a href="https://www.hiroshima-u.ac.jp/access/higashihiroshima" target="_blank" rel="noopener">アクセス</a>）
+<h4><strong>基盤科目</strong></h4>
+[show_subjetList_hiroshima 1]
+<h4><strong>先端科目</strong></h4>
+[show_subjetList_hiroshima 2]
+<h4><strong>技術展開力科目</strong></h4>
+[show_subjetList_hiroshima 3]
+
+<hr />
+
+<h3><img class="alignnone wp-image-261 " src="http://localhost/wp-content/uploads/2018/12/section03-image02-215x300.png" alt="" width="120" height="167" />IoT 組込み</h3>
+<h3>静岡大学</h3>
+静岡大学情報学部では，これまでにも制御系組込みソフトウェア開発の人材育成に取り組んでまいりました．enPiT-Pro Embでは，これまでの経験やコンテンツを活用しながら，IoT領域の組込みソフトウェア設計や開発に必要な知識，技術を扱う講座を幅広く用意しました．C言語や，Javaプログラミングの基礎から確認することができる講座も展開します．また，設計からテストまでを一貫してPBLで体験的に学ぶコンテンツも用意して学び続けをサポートします．
+
+所在地：静岡県浜松市（<a href="http://www.inf.shizuoka.ac.jp/access/index.html" target="_blank" rel="noopener">アクセス</a>）
+<h4><strong>基盤科目</strong></h4>
+[show_subjetList_IoTs 1]
+<h4><strong>先端科目</strong></h4>
+[show_subjetList_IoTs 2]
+<h3>愛媛大学</h3>
+愛媛大学からは，IoT領域に関連する科目として，研究や応用が進む深層学習，画像処理，さらにセキュリティにフォーカスした科目を展開します．理論学習のほか，Raspberry PiやFPGAによる演習も実施して，モノに触れながら画像処理を応用したプログラムを試作します．農業，工業，防犯など，より快適な地域環境の創出に情報科学ができることを，愛媛大学のシーズで学び続けることができます．
+
+所在地：愛媛県松山市（<a href="https://www.ehime-u.ac.jp/overview/access/johoku/" target="_blank" rel="noopener">アクセス</a>）
+<h4><strong>基盤科目</strong></h4>
+[show_subjetList_IoTs 3]
+<h4><strong>先端科目</strong></h4>
+[show_subjetList_IoTs 4]
+<h3>南山大学</h3>
+南山大学は5大学唯一の私学としてIoT領域の学び続けコンテンツを提供する予定です．詳細は決定後お知らせします．
+
+所在地：名古屋市昭和区（<a href="http://www.nanzan-u.ac.jp/Information/access.html" target="_blank" rel="noopener">アクセス</a>）
+<h4><strong>基盤科目</strong></h4>
+[show_subjetList_IoTs 5]
+<h4><strong>先端科目</strong></h4>
+[show_subjetList_IoTs 6]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>56</wp:post_id>
 		<wp:post_date><![CDATA[2018-12-09 12:37:16]]></wp:post_date>
@@ -2333,6 +2373,8 @@ enPiT）の，社会人向け情報科学技術実践教育プログラムです
 
 &nbsp;
 <h4 style="text-align: center;"><strong>技術展開力科目　（「車載組込みシステムコース」修了のためには，このカテゴリから12時間の履修が必要です）</strong></h4>
+[show_subjetList_nagoya 3]
+
 <!-- /wp:shortcode -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>145</wp:post_id>
@@ -2343,98 +2385,6 @@ enPiT）の，社会人向け情報科学技術実践教育プログラムです
 		<wp:post_name><![CDATA[aut]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>141</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>T02</title>
-		<link>http://localhost/index.php/__trashed/</link>
-		<pubDate>Thu, 20 Dec 2018 07:06:57 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?page_id=156</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>156</wp:post_id>
-		<wp:post_date><![CDATA[2018-12-20 07:06:57]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2018-12-20 07:06:57]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[__trashed]]></wp:post_name>
-		<wp:status><![CDATA[trash]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
-			<wp:meta_value><![CDATA[draft]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1545289617]]></wp:meta_value>
-		</wp:postmeta>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
-			<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>リアルタイムOSの内部構造</title>
-		<link>http://localhost/index.php/cource/t01/</link>
-		<pubDate>Thu, 20 Dec 2018 11:45:59 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=188</guid>
-		<description></description>
-		<content:encoded><![CDATA[<p>[show_subject_detile t01]</p>
-<hr />
-<p>[check_deadline t01]</p>
-<!-- wp:shortcode --><!-- /wp:shortcode -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>188</wp:post_id>
-		<wp:post_date><![CDATA[2018-12-20 11:45:59]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2018-12-20 11:45:59]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[t01]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>add_db</title>
-		<link>http://localhost/index.php/add_db/</link>
-		<pubDate>Sun, 23 Dec 2018 05:15:19 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?page_id=246</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>[db_input]</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>246</wp:post_id>
-		<wp:post_date><![CDATA[2018-12-23 05:15:19]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2018-12-23 05:15:19]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[add_db]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
@@ -2721,26 +2671,257 @@ NIC館5階
 		</wp:postmeta>
 	</item>
 	<item>
-		<title>show</title>
-		<link>http://localhost/index.php/add_db/show/</link>
-		<pubDate>Tue, 01 Jan 2019 15:14:10 +0000</pubDate>
+		<title>イベント</title>
+		<link>http://localhost/index.php/event/</link>
+		<pubDate>Thu, 03 Jan 2019 09:48:39 +0000</pubDate>
 		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?page_id=549</guid>
+		<guid isPermaLink="false">http://localhost/?page_id=565</guid>
 		<description></description>
-		<content:encoded><![CDATA[aaa]]></content:encoded>
+		<content:encoded><![CDATA[[show_eventSchedule 2017/4/1]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>549</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 15:14:10]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 15:14:10]]></wp:post_date_gmt>
+		<wp:post_id>565</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 09:48:39]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 09:48:39]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[show]]></wp:post_name>
+		<wp:post_name><![CDATA[event]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>246</wp:post_parent>
+		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[page]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>FAQ</title>
+		<link>http://localhost/index.php/faq/</link>
+		<pubDate>Thu, 03 Jan 2019 10:22:40 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?page_id=573</guid>
+		<description></description>
+		<content:encoded><![CDATA[<h3>申込に関わること</h3>
+
+<hr />
+
+Q:申込はいつから始まりますか？
+
+A:名古屋大学の車載組込みシステムコースは，前期は03月末から05月10日（木曜日）まで，後期は08月01日（水曜日）から09月28日（金）まで，それぞれ受け付けます．カリキュラム紹介のページからお申込みください．
+
+&nbsp;
+
+Q:名古屋大学の科目の受け付け開始はいつですか？
+
+A:<span style="color: #ff0000;">名古屋大学の科目の受付開始は，遅くとも開講日ひと月前には開始します．申込受け付けの開始は，Webのほか，MLでご案内します．</span>MLにご登録ください<a href="https://www.nces.i.nagoya-u.ac.jp/NEP/ml/registration.html">（ML登録のページ）</a>．また，名古屋大学科目の開講規約も問い合わせ前にご覧ください（<a href="https://www.nces.i.nagoya-u.ac.jp/NEP/courses/terms.html">名古屋大学開講規約のページ</a>）．
+
+&nbsp;
+<h3>MBD科目について</h3>
+
+<hr />
+
+Q:「制御システム開発のためのMBD」と「モデルベース開発プロセス」の違いを教えてください．
+
+A:
+<p style="padding-left: 30px;"><strong>「制御システム開発のためのMBD（名古屋大学）」</strong>は，名古屋大学で開講します．
+この科目は，自動車産業で実用化されているモデルベース開発の手法を学び，モデルベース開発手法でECU開発を行うために必要なスキル獲得を目指します．教材は，中部地区の自動車関連企業が名古屋大学と共に開発しました．</p>
+<p style="padding-left: 30px;"><strong>「モデルベース開発プロセス（広島大学）」</strong>は，広島大学で開講します．
+この科目は，機械・電気・制御ソフトの全要素が含まれたメカトロシステムを，モデルベースで開発する技術を，V字開発プロセスの実体験を通して学びます．教材は広島大学ならびに（公財）ひろしま産業振興機構／ひろしまデジタルイノベーションセンターが広島地区の自動車関連企業の協力を得て開発しました．</p>
+<p style="padding-left: 30px;">両科目とも，科目単体での受講が可能です．次のページから科目を選択して，お申込みください．
+・<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/faq/dategateT15.html">「制御システム開発のためのMBD（名古屋大学）」（クリックでシラバスページに移動します）</a>
+・<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/subject/syllabus/hru-s-01.html">「モデルベース開発プロセス（広島大学）」（クリックでシラバスページに移動します）</a>さらに，「制御システムのためのMBD」は，車載組込みシステムコースの選択科目としても，受講可能です．コース受講は，次のページからお申込みください．
+・<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/course/aut.html">名古屋大学「車載組込みシステムコース」（クリックでコース紹介のページに移動します）</a></p>
+<p style="padding-left: 30px;">なお，広島大学でも，「車載組込みシステムコース（広島大学）」の開講を計画しています．その場合には，「モデルベース開発プロセス」が選択科目になります．</p>
+&nbsp;]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>573</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 10:22:40]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 10:22:40]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[faq]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title></title>
+		<link>http://localhost/index.php/uncategorized/578/</link>
+		<pubDate>Thu, 03 Jan 2019 10:28:17 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=578</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>578</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 10:28:17]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 10:28:17]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[578]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>9</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="menu-1"><![CDATA[Menu 1]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[573]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title></title>
+		<link>http://localhost/index.php/uncategorized/579/</link>
+		<pubDate>Thu, 03 Jan 2019 10:28:17 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=579</guid>
+		<description></description>
+		<content:encoded><![CDATA[ ]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>579</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 10:28:17]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 10:28:17]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[579]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>8</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="nav_menu" nicename="menu-1"><![CDATA[Menu 1]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+			<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+			<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[565]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+			<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+			<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>T02</title>
+		<link>http://localhost/index.php/__trashed/</link>
+		<pubDate>Thu, 20 Dec 2018 07:06:57 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?page_id=156</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>156</wp:post_id>
+		<wp:post_date><![CDATA[2018-12-20 07:06:57]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2018-12-20 07:06:57]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[draft]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1545289617]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>リアルタイムOSの内部構造</title>
+		<link>http://localhost/index.php/cource/t01/</link>
+		<pubDate>Thu, 20 Dec 2018 11:45:59 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=188</guid>
+		<description></description>
+		<content:encoded><![CDATA[<p>[show_subject_detile t01]</p>
+<hr />
+<p>[check_deadline t01]</p>
+<!-- wp:shortcode --><!-- /wp:shortcode -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>188</wp:post_id>
+		<wp:post_date><![CDATA[2018-12-20 11:45:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2018-12-20 11:45:59]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[t01]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 			<wp:meta_value><![CDATA[1]]></wp:meta_value>
@@ -3087,6 +3268,46 @@ NIC館5階
 		</wp:postmeta>
 	</item>
 	<item>
+		<title>add_db</title>
+		<link>http://localhost/index.php/add_db__trashed/</link>
+		<pubDate>Sun, 23 Dec 2018 05:15:19 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?page_id=246</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>[db_input]</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>246</wp:post_id>
+		<wp:post_date><![CDATA[2018-12-23 05:15:19]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2018-12-23 05:15:19]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[add_db__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1546508898]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+			<wp:meta_value><![CDATA[add_db]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
 		<title>組込み/自動車セキュリティ中級</title>
 		<link>http://localhost/index.php/cource/t09/</link>
 		<pubDate>Sun, 23 Dec 2018 19:30:13 +0000</pubDate>
@@ -3242,6 +3463,44 @@ NIC館5階
 		</wp:postmeta>
 	</item>
 	<item>
+		<title>show</title>
+		<link>http://localhost/index.php/add_db__trashed/show__trashed/</link>
+		<pubDate>Tue, 01 Jan 2019 15:14:10 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?page_id=549</guid>
+		<description></description>
+		<content:encoded><![CDATA[aaa]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>549</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 15:14:10]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 15:14:10]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[show__trashed]]></wp:post_name>
+		<wp:status><![CDATA[trash]]></wp:status>
+		<wp:post_parent>246</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
+			<wp:meta_value><![CDATA[publish]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_trash_meta_time]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1546508896]]></wp:meta_value>
+		</wp:postmeta>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_wp_desired_post_slug]]></wp:meta_key>
+			<wp:meta_value><![CDATA[show]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
 		<title>マルチプロセッサ用RTOSの内部構造</title>
 		<link>http://localhost/index.php/cource/t06/</link>
 		<pubDate>Mon, 31 Dec 2018 17:47:46 +0000</pubDate>
@@ -3344,6 +3603,555 @@ NIC館5階
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[m03_02]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>m03_03</title>
+		<link>http://localhost/index.php/cource/m03_03/</link>
+		<pubDate>Tue, 01 Jan 2019 06:06:04 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=505</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>505</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 06:06:04]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:04]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[m03_03]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>m03_04</title>
+		<link>http://localhost/index.php/cource/m03_04/</link>
+		<pubDate>Tue, 01 Jan 2019 06:06:12 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=507</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>507</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 06:06:12]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:12]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[m03_04]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>m03_05</title>
+		<link>http://localhost/index.php/cource/m03_05/</link>
+		<pubDate>Tue, 01 Jan 2019 06:06:22 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=509</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>509</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 06:06:22]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:22]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[m03_05]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>m03_06</title>
+		<link>http://localhost/index.php/cource/m03_06/</link>
+		<pubDate>Tue, 01 Jan 2019 06:06:30 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=511</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>511</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 06:06:30]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:30]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[m03_06]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>m03_07</title>
+		<link>http://localhost/index.php/cource/m03_07/</link>
+		<pubDate>Tue, 01 Jan 2019 06:06:38 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=513</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>513</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 06:06:38]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:38]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[m03_07]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>技術者のための文書作成法（夜間開講）</title>
+		<link>http://localhost/index.php/cource/d03-n/</link>
+		<pubDate>Tue, 01 Jan 2019 07:02:47 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=523</guid>
+		<description></description>
+		<content:encoded><![CDATA[・開講日
+A日程：2018年07月11日（水曜日），07月18日（水曜日），08月01日（水曜日）
+B日程：2018年11月13日（火曜日），11月20日（火曜日），11月27日（火曜日）
+C日程：2019年01月16日（水曜日），01月23日（水曜日），01月30日（水曜日）
+A,B,Cの日程は跨いで受講いただけますが，回は順に受講してください．
+
+・開講時間
+A日程：18時30分から20時30分（18時15分開場，集合時刻18時20分）
+B日程：19時00分から21時00分（18時45分開場，集合時刻18時50分）
+C日程：18時30分から20時30分（18時15分開場，集合時刻18時20分）
+
+・受講申込期間
+各回開講日7日前まで
+
+・受講料
+20000円(税込)
+
+・定員(先着順)
+30名
+
+・会場
+名古屋大学　ナショナル・イノベーション・コンプレックス（NIC）館2階会議室
+
+・講師
+海上智昭 （名古屋大学）
+
+・講座概要
+
+ソフトウェア開発では，要求仕様書やアーキテクチャ設計書など複数種類の開発文書が作成されます．本講座では，それらの開発文書の作成に役立つ基本的な技法を学びます．
+
+文書の作成方法やまとめられ方には，想定している利用者や利用状況別に，ブック型やトピック（指向）型をはじめ，様々な特徴をもっています．文書である以上，最低限満たすべき特徴は共有されますが，想定している利用方法が異なることから，両者では幾つか異なる発想，方法が求められる部分もあります．
+
+本講座で扱う文書作成の技法は，単に日本語の"てにをは"に終始することなく，より多くの読み手に納得してもらえる文書を作成できる技術者の育成までを視野に含みます．
+
+はじめに，開発文書が果たす多様な役割を確認し，文書作成の動機を強めます．その上で，論文やレポートが日常的に書かれている大学における学生の指導方法を参考に，文書作成のコツを学びます．例えば，表現の適切さ，ロジック，目的との一致に着目します．その上で，読みやすく，分かりやすい文書を作成する技法の習得をねらいます．言語的な問題のみならず，論理的思考や分かりやすい図の書き方など，良い文書を作成するために求められる技法や知識を学びます．
+
+本講座は，全てのソフトウェア開発者に有効です．
+(補足）本講座は，"ドキュメントレビュー"講座を受講する前後段階での受講をお勧めしています．
+
+・実習機材
+
+講義当日は、受講者にWindowsPCをお貸しします
+
+・到達目標
+
+分かりやすい文書を作成するための知識や理解を深め，開発現場において実践することができる技法を習得する
+
+・対象者
+
+次の条件のいずれか，または双方に該当する方
+(1)ソフトウェア開発業務に従事されている方
+(2)文書作成能力を向上させたいと思う方
+
+・前提条件
+
+何らかのソフトウェア開発の経験があること
+
+・講義計画
+
+1. ドキュメントとドキュメンテーション
+文書とは
+開発文書とは
+価値を創り出す技術
+
+2. よいドキュメント作成の試み
+文章構造，展開
+表記の法則や妥当性
+用語の定義
+論理構成
+
+3. 批判的思考
+批判的思考とは
+批判的思考の基準
+批判的思考と文章
+自分で確認するための指標
+
+4. 開発文書を批判的に書くということ
+実習
+
+・enPiT-Pro Emb車載組込みコース履修者向け評価方法
+
+enPiT-Pro Embの「<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/course/aut.html">名古屋大学車載組込みシステムコース</a>」履修者がこの科目を受講した場合の評価方法は次のとおりです（同コース履修者のみ）．
+・課題レポートにより評価します
+・全時間数を出席していること，出席時間が必要条件に満たない場合は受講認定しない
+
+・これまでに受講された方々の声
+<ul>
+ 	<li>認識できていなかったところの発見やなんとなくで行っていたところの理由付けができました．使用には気を付けなければならない点もあると思いますが，すぐにでも使える点を積極的に使っていこうと思います．</li>
+ 	<li>文書を書くこと自体をこんなに掘り下げるとは思わなかった．一見即戦力になりそうな小手先のテクニックを学ぶより，長い目で見て必ず身になる内容だと思った．</li>
+ 	<li>文書を書くことが苦手，よく指摘を受けているのですが，原因が分かったような気がしました．</li>
+ 	<li>理論，技法のみでなく業務経験に元にしたお話で非常に興味深く聞かせて頂きました．</li>
+ 	<li>文書を見直すための技術，技能的な観点を教えて頂けたのが有意義であったと思います．</li>
+ 	<li>一般的なことだけでなく，講師の方を含め設計の際の個人的な考えなど様々な角度からの取り組みかたを学ぶことができた．</li>
+ 	<li>他者視点で考えることで，要求仕様の書き方が改善できそう．</li>
+ 	<li>一文一義や細分化された粒度での考え方というのは，設計文書だけでなく回路図面やプログラムソースコードにも適用すべき内容であるという認識が，より高まりました．</li>
+ 	<li>自社においては，手探りでドキュメントの品質向上をしようとしているところに，今回受けた内容は，新鮮でした．</li>
+</ul>
+・備考
+<ul>
+ 	<li>科目名の後に開講回数（x回目）の記載のある科目については，何回目を受けて頂いても内容は基本的に同じです（同一名の夜間開講についても同様です）．改良を目的とするマイナ改訂や，受講者の希望に応じた講義展開のため，場合によっては完全に同一の内容とならない可能性もございますが，到達目標や，扱う内容は同一です．</li>
+ 	<li>募集期間に関わらず，受講のための名古屋大学からの諸手続き，連絡は，開講日1月前から開始します．それ以前に，開講手続きや，受講料の期間前納入のご相談には応じ兼ねます．ご了承ください．</li>
+ 	<li>お申込みや開講に関わる諸条件は，<a href="https://www.nces.i.nagoya-u.ac.jp/NEP/courses/terms.html">公開講座開講規約のページ</a>をご覧ください．</li>
+</ul>
+
+<hr />
+
+[contact-form-7 id="533" title="cource_apply_d03-n"]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>523</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 07:02:47]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 07:02:47]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[d03-n]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>ソフトウェア品質・信頼性評価技術（広島大学提供科目）</title>
+		<link>http://localhost/index.php/cource/ngu-k-13/</link>
+		<pubDate>Tue, 01 Jan 2019 13:09:55 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=542</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile ngu-k-13]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>542</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 13:09:55]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 13:09:55]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ngu-k-13]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>組込み/自動車セキュリティ初級（開講回選択）</title>
+		<link>http://localhost/index.php/cource/t08/</link>
+		<pubDate>Tue, 01 Jan 2019 15:53:03 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=551</guid>
+		<description></description>
+		<content:encoded><![CDATA[受講を希望する開講回をクリックしてください．当該回の詳細情報ページに移動します．
+科目名が同一であれば，何回目を受けて頂いても内容は基本的に同じです（同一名の夜間開講についても同様です）．改良を目的とするマイナ改訂や，受講者の希望に応じた講義展開のため，場合によっては完全に同一の内容とならない可能性もございますが，掲示する到達目標や，扱う内容は同一です．
+
+[show_subjetChildList_nagoya t08]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>551</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 15:53:03]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 15:53:03]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[t08]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>組込み/自動車セキュリティ初級（1回目）</title>
+		<link>http://localhost/index.php/cource/t08_1/</link>
+		<pubDate>Tue, 01 Jan 2019 16:01:13 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=554</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile t08_1]
+
+<hr />
+
+[check_deadline t08_1]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>554</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 16:01:13]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 16:01:13]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[t08_1]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>組込み/自動車セキュリティ初級（2回目）</title>
+		<link>http://localhost/index.php/cource/t08_2/</link>
+		<pubDate>Tue, 01 Jan 2019 16:02:08 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=556</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile t08_2]
+
+<hr />
+
+[check_deadline t08_2]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>556</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-01 16:02:08]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-01 16:02:08]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[t08_2]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>車載組込みシステムコース技術展開力実践</title>
+		<link>http://localhost/index.php/cource/ngu-g-01/</link>
+		<pubDate>Thu, 03 Jan 2019 10:39:01 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=580</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>580</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 10:39:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 10:39:01]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[ngu-g-01]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>ソフトウェア品質・信頼性評価技術</title>
+		<link>http://localhost/index.php/cource/hru-k-01/</link>
+		<pubDate>Thu, 03 Jan 2019 10:56:54 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=587</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile_hiroshima hru-k-01]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>587</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 10:56:54]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 10:56:54]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hru-k-01]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>ソフトウェア構成管理演習</title>
+		<link>http://localhost/index.php/cource/hru-k-02/</link>
+		<pubDate>Thu, 03 Jan 2019 11:36:53 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=594</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile_hiroshima hru-k-02]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>594</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 11:36:53]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 11:36:53]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hru-k-02]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>チーム開発演習術</title>
+		<link>http://localhost/index.php/cource/hru-k-03/</link>
+		<pubDate>Thu, 03 Jan 2019 11:43:38 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=598</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile_hiroshima hru-k-03]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>598</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 11:43:38]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 11:43:38]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hru-k-03]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>GPUプログラミング</title>
+		<link>http://localhost/index.php/cource/hru-k-04/</link>
+		<pubDate>Thu, 03 Jan 2019 11:49:31 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=602</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile_hiroshima hru-k-04]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>602</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 11:49:31]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 11:49:31]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hru-k-04]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
+		<wp:postmeta>
+			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+			<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+	</item>
+	<item>
+		<title>モデルベース開発プロセス</title>
+		<link>http://localhost/index.php/cource/hru-s-01/</link>
+		<pubDate>Thu, 03 Jan 2019 11:57:11 +0000</pubDate>
+		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
+		<guid isPermaLink="false">http://localhost/?p=610</guid>
+		<description></description>
+		<content:encoded><![CDATA[[show_subject_detile_hiroshima hru-s-01]]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>610</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 11:57:11]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 11:57:11]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[hru-s-01]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -3677,274 +4485,6 @@ This e-mail was sent from a contact form on  (http://localhost)";s:18:"additiona
 		</wp:postmeta>
 	</item>
 	<item>
-		<title>m03_03</title>
-		<link>http://localhost/index.php/cource/m03_03/</link>
-		<pubDate>Tue, 01 Jan 2019 06:06:04 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=505</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>505</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 06:06:04]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:04]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[m03_03]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>m03_04</title>
-		<link>http://localhost/index.php/cource/m03_04/</link>
-		<pubDate>Tue, 01 Jan 2019 06:06:12 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=507</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>507</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 06:06:12]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:12]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[m03_04]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>m03_05</title>
-		<link>http://localhost/index.php/cource/m03_05/</link>
-		<pubDate>Tue, 01 Jan 2019 06:06:22 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=509</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>509</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 06:06:22]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:22]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[m03_05]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>m03_06</title>
-		<link>http://localhost/index.php/cource/m03_06/</link>
-		<pubDate>Tue, 01 Jan 2019 06:06:30 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=511</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>511</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 06:06:30]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:30]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[m03_06]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>m03_07</title>
-		<link>http://localhost/index.php/cource/m03_07/</link>
-		<pubDate>Tue, 01 Jan 2019 06:06:38 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=513</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>513</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 06:06:38]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 06:06:38]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[m03_07]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>技術者のための文書作成法（夜間開講）</title>
-		<link>http://localhost/index.php/cource/d03-n/</link>
-		<pubDate>Tue, 01 Jan 2019 07:02:47 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=523</guid>
-		<description></description>
-		<content:encoded><![CDATA[・開講日
-A日程：2018年07月11日（水曜日），07月18日（水曜日），08月01日（水曜日）
-B日程：2018年11月13日（火曜日），11月20日（火曜日），11月27日（火曜日）
-C日程：2019年01月16日（水曜日），01月23日（水曜日），01月30日（水曜日）
-A,B,Cの日程は跨いで受講いただけますが，回は順に受講してください．
-
-・開講時間
-A日程：18時30分から20時30分（18時15分開場，集合時刻18時20分）
-B日程：19時00分から21時00分（18時45分開場，集合時刻18時50分）
-C日程：18時30分から20時30分（18時15分開場，集合時刻18時20分）
-
-・受講申込期間
-各回開講日7日前まで
-
-・受講料
-20000円(税込)
-
-・定員(先着順)
-30名
-
-・会場
-名古屋大学　ナショナル・イノベーション・コンプレックス（NIC）館2階会議室
-
-・講師
-海上智昭 （名古屋大学）
-
-・講座概要
-
-ソフトウェア開発では，要求仕様書やアーキテクチャ設計書など複数種類の開発文書が作成されます．本講座では，それらの開発文書の作成に役立つ基本的な技法を学びます．
-
-文書の作成方法やまとめられ方には，想定している利用者や利用状況別に，ブック型やトピック（指向）型をはじめ，様々な特徴をもっています．文書である以上，最低限満たすべき特徴は共有されますが，想定している利用方法が異なることから，両者では幾つか異なる発想，方法が求められる部分もあります．
-
-本講座で扱う文書作成の技法は，単に日本語の"てにをは"に終始することなく，より多くの読み手に納得してもらえる文書を作成できる技術者の育成までを視野に含みます．
-
-はじめに，開発文書が果たす多様な役割を確認し，文書作成の動機を強めます．その上で，論文やレポートが日常的に書かれている大学における学生の指導方法を参考に，文書作成のコツを学びます．例えば，表現の適切さ，ロジック，目的との一致に着目します．その上で，読みやすく，分かりやすい文書を作成する技法の習得をねらいます．言語的な問題のみならず，論理的思考や分かりやすい図の書き方など，良い文書を作成するために求められる技法や知識を学びます．
-
-本講座は，全てのソフトウェア開発者に有効です．
-(補足）本講座は，"ドキュメントレビュー"講座を受講する前後段階での受講をお勧めしています．
-
-・実習機材
-
-講義当日は、受講者にWindowsPCをお貸しします
-
-・到達目標
-
-分かりやすい文書を作成するための知識や理解を深め，開発現場において実践することができる技法を習得する
-
-・対象者
-
-次の条件のいずれか，または双方に該当する方
-(1)ソフトウェア開発業務に従事されている方
-(2)文書作成能力を向上させたいと思う方
-
-・前提条件
-
-何らかのソフトウェア開発の経験があること
-
-・講義計画
-
-1. ドキュメントとドキュメンテーション
-文書とは
-開発文書とは
-価値を創り出す技術
-
-2. よいドキュメント作成の試み
-文章構造，展開
-表記の法則や妥当性
-用語の定義
-論理構成
-
-3. 批判的思考
-批判的思考とは
-批判的思考の基準
-批判的思考と文章
-自分で確認するための指標
-
-4. 開発文書を批判的に書くということ
-実習
-
-・enPiT-Pro Emb車載組込みコース履修者向け評価方法
-
-enPiT-Pro Embの「<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/course/aut.html">名古屋大学車載組込みシステムコース</a>」履修者がこの科目を受講した場合の評価方法は次のとおりです（同コース履修者のみ）．
-・課題レポートにより評価します
-・全時間数を出席していること，出席時間が必要条件に満たない場合は受講認定しない
-
-・これまでに受講された方々の声
-<ul>
- 	<li>認識できていなかったところの発見やなんとなくで行っていたところの理由付けができました．使用には気を付けなければならない点もあると思いますが，すぐにでも使える点を積極的に使っていこうと思います．</li>
- 	<li>文書を書くこと自体をこんなに掘り下げるとは思わなかった．一見即戦力になりそうな小手先のテクニックを学ぶより，長い目で見て必ず身になる内容だと思った．</li>
- 	<li>文書を書くことが苦手，よく指摘を受けているのですが，原因が分かったような気がしました．</li>
- 	<li>理論，技法のみでなく業務経験に元にしたお話で非常に興味深く聞かせて頂きました．</li>
- 	<li>文書を見直すための技術，技能的な観点を教えて頂けたのが有意義であったと思います．</li>
- 	<li>一般的なことだけでなく，講師の方を含め設計の際の個人的な考えなど様々な角度からの取り組みかたを学ぶことができた．</li>
- 	<li>他者視点で考えることで，要求仕様の書き方が改善できそう．</li>
- 	<li>一文一義や細分化された粒度での考え方というのは，設計文書だけでなく回路図面やプログラムソースコードにも適用すべき内容であるという認識が，より高まりました．</li>
- 	<li>自社においては，手探りでドキュメントの品質向上をしようとしているところに，今回受けた内容は，新鮮でした．</li>
-</ul>
-・備考
-<ul>
- 	<li>科目名の後に開講回数（x回目）の記載のある科目については，何回目を受けて頂いても内容は基本的に同じです（同一名の夜間開講についても同様です）．改良を目的とするマイナ改訂や，受講者の希望に応じた講義展開のため，場合によっては完全に同一の内容とならない可能性もございますが，到達目標や，扱う内容は同一です．</li>
- 	<li>募集期間に関わらず，受講のための名古屋大学からの諸手続き，連絡は，開講日1月前から開始します．それ以前に，開講手続きや，受講料の期間前納入のご相談には応じ兼ねます．ご了承ください．</li>
- 	<li>お申込みや開講に関わる諸条件は，<a href="https://www.nces.i.nagoya-u.ac.jp/NEP/courses/terms.html">公開講座開講規約のページ</a>をご覧ください．</li>
-</ul>
-
-<hr />
-
-[contact-form-7 id="533" title="cource_apply_d03-n"]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>523</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 07:02:47]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 07:02:47]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[d03-n]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
 		<title>d03-n_a</title>
 		<link>http://localhost/index.php/cource/d03-n_a__trashed/</link>
 		<pubDate>Tue, 01 Jan 2019 07:09:00 +0000</pubDate>
@@ -4082,7 +4622,6 @@ enPiT-Pro Embの「<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/cour
 
 受講日程（第3回）
 [radio day3 default:1 "A日程：2018年08月01日（水曜日）18:30〜20:30" "B日程：2018年11月27日（火曜日）19:00〜21:00" "C日程：2019年01月30日（水曜日）18:30〜20:30"]
-
 <label> お名前 (必須)
     [text* your-name] </label>
 
@@ -4094,7 +4633,69 @@ enPiT-Pro Embの「<a href="https://www.nces.i.nagoya-u.ac.jp/enpit-pro-emb/cour
 <label> メールアドレス再入力 (確認)
     [email* your-email_confirm] </label>
 
-[submit "Send"]
+<label> 勤務先 (必須)
+    [text* your-company] </label>
+
+<label> 所属部署 (必須)
+    [text* your-department] </label>
+
+連絡先 (必須)
+[radio day1 default:1 "勤務先" "自宅"]
+
+<label>請求書送付先 郵便番号 (必須)
+    [text* zipcode] </label>
+
+<label> 都道府県 (必須)
+    [select* address1 include_blank "北海道" "青森県" "岩手県" "宮城県" "秋田県" "山形県" "福島県" "茨城県" "栃木県" "群馬県" "埼玉県" "千葉県" "東京都" "神奈川県" "新潟県" "富山県" "石川県" "福井県" "山梨県" "長野県" "岐阜県" "静岡県" "愛知県" "三重県" "滋賀県" "京都府" "大阪府" "兵庫県" "奈良県" "和歌山県" "鳥取県" "島根県" "岡山県" "広島県" "山口県" "徳島県" "香川県" "愛媛県" "高知県" "福岡県" "佐賀県" "長崎県" "熊本県" "大分県" "宮崎県" "鹿児島県" "沖縄県"]</label>
+
+<label> 市区町村 (必須)
+    [text* address2] </label>
+
+<label> 番地・建物名 (必須)
+    [text* address3] </label>
+
+<label> 請求先電話番号 (必須)
+    [text* your-phone] </label>
+
+<label> お支払い方法 (必須)
+    [select* address1 include_blank "1.三菱UFJ銀行に事前振込" "2.当日(初回)支払い(現金のみ)" ]</label>
+
+【事前振込について】
+1．受講料事前支払を選択された場合，本学からの納入依頼書（請求書）の発送は，開講日前30日以降です．それ以前の請求手続はいたしません．
+2．支払期日は，本学から発送する納入依頼書に記載されています．
+3．本学からお送りする納入依頼書の期限は，納入依頼書の発行日から【30日以内】有効です．極力，開講日前の納入にご協力をお願いいたします．
+
+<label> 請求書記載名義 (必須)</label>
+請求書（納入依頼書兼領収書）を名古屋大学から発送いたしますので，ご記入ください．
+（1）振込手数料はご負担ください．
+（2）振込口座や締切日の情報は，名古屋大学からお送りする納入依頼書にてお知らせします．
+開講日以降の交換，再発行はお受けいたしかねます．宛名の確認をお願いいたします．
+    [text* your-Invoice_name] 
+
+<label> 領収書記載名義</label>
+当日現金払いの場合は，当日領収書をお渡ししますので，ご記入ください．
+事前振込の場合は，ご記入の必要ございません．振込記録での代用をお願いいたします．
+    [text your-receipt_name] 
+
+<label> 備考・連絡事項</label>
+    [text your-remarks] 
+
+<label> 送信するには個人情報の取扱いについてへの同意が必要です</label>
+<a href="https://ws.formzu.net/fgen-open-pp.php?ID=S11501561" target="_blank"><u>個人情報の取扱いについて</u></a> (新規タブで開きます)
+[radio submit default:2 "同意する" "同意しない"]
+
+[submit "送信"]
+
+
+
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+<script type="text/javascript">
+jQuery(function( $ ) {
+    jQuery( 'input[name="zipcode"]' ).keyup( function( e ) {
+        AjaxZip3.zip2addr('zipcode','','address1','address2');
+    } )
+} );
+</script>
 1
 "お申込みフォーム:[subject]"
 [your-name] <[your-email]>
@@ -4182,7 +4783,6 @@ The telephone number is invalid.]]></content:encoded>
 
 受講日程（第3回）
 [radio day3 default:1 "A日程：2018年08月01日（水曜日）18:30〜20:30" "B日程：2018年11月27日（火曜日）19:00〜21:00" "C日程：2019年01月30日（水曜日）18:30〜20:30"]
-
 <label> お名前 (必須)
     [text* your-name] </label>
 
@@ -4194,7 +4794,69 @@ The telephone number is invalid.]]></content:encoded>
 <label> メールアドレス再入力 (確認)
     [email* your-email_confirm] </label>
 
-[submit "Send"]]]></wp:meta_value>
+<label> 勤務先 (必須)
+    [text* your-company] </label>
+
+<label> 所属部署 (必須)
+    [text* your-department] </label>
+
+連絡先 (必須)
+[radio day1 default:1 "勤務先" "自宅"]
+
+<label>請求書送付先 郵便番号 (必須)
+    [text* zipcode] </label>
+
+<label> 都道府県 (必須)
+    [select* address1 include_blank "北海道" "青森県" "岩手県" "宮城県" "秋田県" "山形県" "福島県" "茨城県" "栃木県" "群馬県" "埼玉県" "千葉県" "東京都" "神奈川県" "新潟県" "富山県" "石川県" "福井県" "山梨県" "長野県" "岐阜県" "静岡県" "愛知県" "三重県" "滋賀県" "京都府" "大阪府" "兵庫県" "奈良県" "和歌山県" "鳥取県" "島根県" "岡山県" "広島県" "山口県" "徳島県" "香川県" "愛媛県" "高知県" "福岡県" "佐賀県" "長崎県" "熊本県" "大分県" "宮崎県" "鹿児島県" "沖縄県"]</label>
+
+<label> 市区町村 (必須)
+    [text* address2] </label>
+
+<label> 番地・建物名 (必須)
+    [text* address3] </label>
+
+<label> 請求先電話番号 (必須)
+    [text* your-phone] </label>
+
+<label> お支払い方法 (必須)
+    [select* address1 include_blank "1.三菱UFJ銀行に事前振込" "2.当日(初回)支払い(現金のみ)" ]</label>
+
+【事前振込について】
+1．受講料事前支払を選択された場合，本学からの納入依頼書（請求書）の発送は，開講日前30日以降です．それ以前の請求手続はいたしません．
+2．支払期日は，本学から発送する納入依頼書に記載されています．
+3．本学からお送りする納入依頼書の期限は，納入依頼書の発行日から【30日以内】有効です．極力，開講日前の納入にご協力をお願いいたします．
+
+<label> 請求書記載名義 (必須)</label>
+請求書（納入依頼書兼領収書）を名古屋大学から発送いたしますので，ご記入ください．
+（1）振込手数料はご負担ください．
+（2）振込口座や締切日の情報は，名古屋大学からお送りする納入依頼書にてお知らせします．
+開講日以降の交換，再発行はお受けいたしかねます．宛名の確認をお願いいたします．
+    [text* your-Invoice_name] 
+
+<label> 領収書記載名義</label>
+当日現金払いの場合は，当日領収書をお渡ししますので，ご記入ください．
+事前振込の場合は，ご記入の必要ございません．振込記録での代用をお願いいたします．
+    [text your-receipt_name] 
+
+<label> 備考・連絡事項</label>
+    [text your-remarks] 
+
+<label> 送信するには個人情報の取扱いについてへの同意が必要です</label>
+<a href="https://ws.formzu.net/fgen-open-pp.php?ID=S11501561" target="_blank"><u>個人情報の取扱いについて</u></a> (新規タブで開きます)
+[radio submit default:2 "同意する" "同意しない"]
+
+[submit "送信"]
+
+
+
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+<script type="text/javascript">
+jQuery(function( $ ) {
+    jQuery( 'input[name="zipcode"]' ).keyup( function( e ) {
+        AjaxZip3.zip2addr('zipcode','','address1','address2');
+    } )
+} );
+</script>]]></wp:meta_value>
 		</wp:postmeta>
 		<wp:postmeta>
 			<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
@@ -4235,112 +4897,20 @@ This e-mail was sent from a contact form on  (http://localhost)";s:18:"additiona
 		</wp:postmeta>
 	</item>
 	<item>
-		<title>ソフトウェア品質・信頼性評価技術（広島大学提供科目）</title>
-		<link>http://localhost/index.php/cource/ngu-k-13/</link>
-		<pubDate>Tue, 01 Jan 2019 13:09:55 +0000</pubDate>
+		<title>技術展開演習</title>
+		<link>http://localhost/index.php/cource/hru-g-01/</link>
+		<pubDate>Thu, 03 Jan 2019 12:07:33 +0000</pubDate>
 		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=542</guid>
+		<guid isPermaLink="false">http://localhost/?p=614</guid>
 		<description></description>
-		<content:encoded><![CDATA[[show_subject_detile ngu-k-13]]]></content:encoded>
+		<content:encoded><![CDATA[[show_subject_detile_hiroshima hru-g-01]]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>542</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 13:09:55]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 13:09:55]]></wp:post_date_gmt>
+		<wp:post_id>614</wp:post_id>
+		<wp:post_date><![CDATA[2019-01-03 12:07:33]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-01-03 12:07:33]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[ngu-k-13]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>組込み/自動車セキュリティ初級（開講回選択）</title>
-		<link>http://localhost/index.php/cource/t08/</link>
-		<pubDate>Tue, 01 Jan 2019 15:53:03 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=551</guid>
-		<description></description>
-		<content:encoded><![CDATA[受講を希望する開講回をクリックしてください．当該回の詳細情報ページに移動します．
-科目名が同一であれば，何回目を受けて頂いても内容は基本的に同じです（同一名の夜間開講についても同様です）．改良を目的とするマイナ改訂や，受講者の希望に応じた講義展開のため，場合によっては完全に同一の内容とならない可能性もございますが，掲示する到達目標や，扱う内容は同一です．
-
-[show_subjetChildList_nagoya t08]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>551</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 15:53:03]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 15:53:03]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[t08]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>組込み/自動車セキュリティ初級（1回目）</title>
-		<link>http://localhost/index.php/cource/t08_1/</link>
-		<pubDate>Tue, 01 Jan 2019 16:01:13 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=554</guid>
-		<description></description>
-		<content:encoded><![CDATA[[show_subject_detile t08_1]
-
-<hr />
-
-[check_deadline t08_1]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>554</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 16:01:13]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 16:01:13]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[t08_1]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-		<category domain="category" nicename="cource"><![CDATA[cource]]></category>
-		<wp:postmeta>
-			<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-			<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-	</item>
-	<item>
-		<title>組込み/自動車セキュリティ初級（2回目）</title>
-		<link>http://localhost/index.php/cource/t08_2/</link>
-		<pubDate>Tue, 01 Jan 2019 16:02:08 +0000</pubDate>
-		<dc:creator><![CDATA[wordpressuser]]></dc:creator>
-		<guid isPermaLink="false">http://localhost/?p=556</guid>
-		<description></description>
-		<content:encoded><![CDATA[[show_subject_detile t08_2]
-
-<hr />
-
-[check_deadline t08_2]]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>556</wp:post_id>
-		<wp:post_date><![CDATA[2019-01-01 16:02:08]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-01-01 16:02:08]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[t08_2]]></wp:post_name>
+		<wp:post_name><![CDATA[hru-g-01]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
