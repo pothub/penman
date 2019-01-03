@@ -398,18 +398,6 @@ function my_php_Include($params = array()) {
 add_shortcode('myphp', 'my_php_Include');
 
 
-function form_post() {
-	echo "aa";
-	// if(isset($_POST)){
-	echo $_POST['name_'];
-	// 	$email = $_POST['email'];
-	// 	echo '<ul>';
-	// 	echo '<li>'.$name.'</li>'
-	// 		echo '<li>'.$email.'</li>'
-	// 		echo '</ul>';
-}
-// }
-add_shortcode('sc_form_post', 'form_post');
 
 $dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
 // $sql_nagoya = 'select * from subjects_hiroshima';
@@ -477,13 +465,25 @@ function show_subject_detile_($attr) {
 		print($row['opening_time'].'<br /><br />');
 
 		print('・受講申込期間<br />');
-		print($apply_deadline_.' まで<br /><br />');
+		if($row['type'] < 3){
+			print($apply_deadline_.' まで<br /><br />');
+		}
+		else{
+			print('車載組込みシステムコース申込時<br /><br />');
+		}
 
 		print('・受講料<br />');
-		print($global_fee.'円(税込)<br /><br />');
+		if($row['type'] < 3){
+			print($global_fee.'円(税込)<br /><br />');
+		}
+		else{
+			print('「車載組込みシステムコース」の，コース受講料に含まれますので請求いたしません．<br>この科目は，名古屋大学「車載組込みシステムコース」履修者のみの受け付けとし，科目選択受講は受け付けません．<br /><br />');
+		}
 
-		print('・定員(先着順)<br />');
-		print($row['capacity'].'名<br /><br />');
+		if($row['type'] < 3){
+			print('・定員(先着順)<br />');
+			print($row['capacity'].'名<br /><br />');
+		}
 
 		print('・会場<br />');
 		print($row['location'].'<br /><br />');
@@ -493,6 +493,32 @@ function show_subject_detile_($attr) {
 
 		print('・講座概要<br />');
 		print($row['course_outline'].'<br /><br />');
+
+		print('・実習機材など<br />');
+		print($row['equipment'].'<br /><br />');
+
+		print('・到達目標<br>');
+		print($row['goal'].'<br><br>');
+
+		print('・対象者<br>');
+		print($row['target'].'<br><br>');
+
+		print('・前提条件<br>');
+		print($row['precondition'].'<br><br>');
+
+		print('・講義計画<br>');
+		print($row['lecture_plan'].'<br><br>');
+
+		print('・評価方法<br>');
+		print($row['evaluation'].'<br><br>');
+
+		if($row['type'] < 3){
+			print('・これまでに受講された方々の声<br>');
+			print($row['review'].'<br><br>');
+		}
+
+		print('・備考<br>');
+		print($row['remarks'].'<br><br>');
 	}catch (PDOException $e){
 		print('Error:'.$e->getMessage());
 		die();
@@ -512,7 +538,7 @@ function show_subjetList_nagoya_($attr) {
 		$num = 0;
 		foreach ($dbh->query($sql_nagoya) as $row) {
 			if ((!is_null($row['name_subject']) and ($row['type'] == $attr[0]))){
-				print '<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td>';
+				print '<td width="33%"><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td>';
 				$num += 1;
 				if($num %3 == 0){
 					echo '<tr>';
@@ -530,22 +556,26 @@ function show_subjetList_nagoya_($attr) {
 }
 add_shortcode('show_subjetList_nagoya', 'show_subjetList_nagoya_');
 
-function show_subjetSchedule_nagoya_() {
+function show_subjetSchedule_nagoya_($attr) {
 	$today = new DateTime();
 	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
 	$sql_nagoya = 'select * from subjects_nagoya ORDER BY opening_date_begin ASC';
+	$f_start = 0;
 
 	try{
 		ob_start();
 		global $dbh;
-		$prev_date = date("2018/3/1");
+		$prev_date = date("Y-m-d",strtotime(date($attr[0]) . "-1 month"));
 		foreach ($dbh->query($sql_nagoya) as $row) {
 			if (!is_null($row['opening_date_begin'])){
 				if(date('n', strtotime($row['opening_date_begin'])) - date('n', strtotime($prev_date)) > 0){
-					print date('Y年n月の開講計画', strtotime($prev_date));
-					print '<br>';
 ?>
 </table>
+<?php
+					print date('Y年n月の開講計画', strtotime($row['opening_date_begin']));
+					print '<br>';
+					$f_start = 1;
+?>
 <table border="1">
 <tr>
 <td width="25%">
@@ -557,22 +587,24 @@ function show_subjetSchedule_nagoya_() {
 <tr>
 <?php
 				}
-				if (is_null($row['id_parent'])){ // if no child
-					if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
-						print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
+				if($f_start == 1){
+					if (is_null($row['id_parent'])){ // if no child
+						if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+							print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
+						}
+						else{
+							print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td><tr>';
+						}
 					}
 					else{
-						print '<td>'.$row['opening_date_string'].'<td>'.$row['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td><tr>';
-					}
-				}
-				else{
-					$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
-					foreach ($dbh->query($sql_nagoya_) as $row_p){}
-					if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
-						print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
-					}
-					else{
-						print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></h4></u></td><tr>';
+						$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
+						foreach ($dbh->query($sql_nagoya_) as $row_p){}
+						if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+							print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
+						}
+						else{
+							print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></h4></u></td><tr>';
+						}
 					}
 				}
 				$prev_date = $row['opening_date_begin'];
@@ -606,3 +638,4 @@ function show_subjetChildList_nagoya_($attr) {
 	}
 }
 add_shortcode('show_subjetChildList_nagoya', 'show_subjetChildList_nagoya_');
+
