@@ -462,23 +462,12 @@ function show_subject_detile_($attr) {
 <table border="1">
 <tr>
 <?php
-		print '<td width="25%">開講日<td width="75%">'.$opening_date_string_.'</td><tr>';
+		print '<td width="25%"><b>開講日</b><td width="75%">'.$opening_date_string_.'</td><tr>';
 		print '<td>開講時間<td>'.$row['opening_time'].'</td><tr>';
-		if($row['type'] < 9){
-			print '<td>受講申込期間<td>'.$apply_deadline_.' まで</td><tr>';
-		}
-		else{
-			print '<td>受講申込期間<td>車載組込みシステムコース申込時</td><tr>';
-		}
+		print '<td>受講申込期限<td>'.$apply_deadline_.'</td><tr>';
+		print '<td>受講料<td>'.$global_fee.'円(税込)</td><tr>';
 
-		if($row['type'] < 9){
-			print '<td>受講料<td>'.$global_fee.'円(税込)</td><tr>';
-		}
-		else{
-			print '<td>受講料<td>「車載組込みシステムコース」の，コース受講料に含まれますので請求いたしません．<br>この科目は，名古屋大学「車載組込みシステムコース」履修者のみの受け付けとし，科目選択受講は受け付けません．</td><tr>';
-		}
-
-		if($row['type'] < 9){
+		if(!is_null($row['capacity'])){
 			print '<td>定員(先着順)<td>'.$row['capacity'].'名</td><tr>';
 		}
 
@@ -491,8 +480,8 @@ function show_subject_detile_($attr) {
 		print '<td>前提条件<td>'.$row['precondition'].'</td><tr>';
 		print '<td>講義計画<td>'.$row['lecture_plan'].'</td><tr>';
 		print '<td>評価方法<td>'.$row['evaluation'].'</td><tr>';
-		if($row['type'] < 9){
-		print '<td>これまでに受講された方々の声<td>'.$row['review'].'</td><tr>';
+		if(!is_null($row['review'])){
+			print '<td>これまでに受講された方々の声<td>'.$row['review'].'</td><tr>';
 		}
 		print '<td>備考<td>'.$row['remarks'].'</td><tr>';
 ?>
@@ -505,7 +494,7 @@ function show_subject_detile_($attr) {
 }
 add_shortcode('show_subject_detile', 'show_subject_detile_');
 
-function show_subjetList_nagoya_($attr) {
+function show_subjetList_car_($attr) {
 	try{
 		ob_start();
 ?>
@@ -533,37 +522,8 @@ function show_subjetList_nagoya_($attr) {
 		die();
 	}
 }
-add_shortcode('show_subjetList_nagoya', 'show_subjetList_nagoya_');
+add_shortcode('show_subjetList_car', 'show_subjetList_car_');
 
-function show_subjetList_hiroshima_($attr) {
-	try{
-		ob_start();
-?>
-<table border="1">
-<tr>
-<?php
-		global $dbh;
-		$sql_hiroshima = 'select * from subjects_hiroshima ORDER BY id_order ASC';
-		$num = 0;
-		foreach ($dbh->query($sql_hiroshima) as $row) {
-			if ((!is_null($row['name_subject']) and ($row['type'] == $attr[0]))){
-				print '<td width="33%"><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td>';
-				$num += 1;
-				if($num %3 == 0){
-					echo '<tr>';
-				}
-			}
-		}
-?>
-</table>
-<?php
-		return ob_get_clean();
-	}catch (PDOException $e){
-		print('Error:'.$e->getMessage());
-		die();
-	}
-}
-add_shortcode('show_subjetList_hiroshima', 'show_subjetList_hiroshima_');
 
 function show_subjetList_IoTs_($attr) {
 	try{
@@ -594,52 +554,6 @@ function show_subjetList_IoTs_($attr) {
 	}
 }
 add_shortcode('show_subjetList_IoTs', 'show_subjetList_IoTs_');
-
-function show_subject_detile_hiroshima_($attr) {
-	global $global_name_sub;
-	global $global_fee;
-	global $dbh;
-	try{
-		ob_start();
-		$sql_hiroshima = "select * from subjects_hiroshima where id_subject ='" .$attr[0]. "'";
-		foreach ($dbh->query($sql_hiroshima) as $row){}
-		$global_name_sub = $row['name_subject'];
-		$global_fee = $row['fee'];
-
-?>
-<table border="1">
-<tr>
-<?php
-
-		print '<td width="25%">開講大学および会場<td width="75%">'.$row['location'].'</td><tr>';
-		print '<td>担当教員名<td>'.$row['lecturer'].'</td><tr>';
-		print '<td>開講時期<td>'.$row['opening_date_string'].'</td><tr>';
-		print '<td>時間数<td>'.$row['opening_time'].'</td><tr>';
-		print '<td>対象者<td>'.$row['target'].'</td><tr>';
-		print '<td>受講者募集期間<td>'.$row['application_period'].'</td><tr>';
-		if($global_fee == 0){
-			print '<td>受講料<td>無料</td><tr>';
-		}
-		else{
-			print '<td>受講料<td>'.$global_fee.'円</td><tr>';
-		}
-		print '<td>到達目標<td>'.$row['goal'].'</td><tr>';
-		print '<td>講座概要<td>'.$row['course_outline'].'</td><tr>';
-		print '<td>履修条件あるいは関連科目<td>'.$row['precondition'].'</td><tr>';
-		print '<td>講義計画<td>'.$row['lecture_plan'].'</td><tr>';
-		print '<td>学習目的達成の確認方法（評価）<td>'.$row['evaluation'].'</td><tr>';
-		print '<td>テキスト<td>'.$row['equipment'].'</td><tr>';
-		print '<td>備考<td>'.$row['remarks'].'</td><tr>';
-?>
-</table>
-<?php
-		return ob_get_clean();
-	}catch (PDOException $e){
-		print('Error:'.$e->getMessage());
-		die();
-	}
-}
-add_shortcode('show_subject_detile_hiroshima', 'show_subject_detile_hiroshima_');
 
 function show_subjetSchedule_nagoya_($attr) {
 	$today = new DateTime();
@@ -761,3 +675,4 @@ function show_eventSchedule_() {
 	}
 }
 add_shortcode('show_eventSchedule', 'show_eventSchedule_');
+

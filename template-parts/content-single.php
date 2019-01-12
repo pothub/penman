@@ -20,31 +20,6 @@ $show_gravatar_option = absint($penman_theme_options['show_gravatar_option']);
 			</a>
 		</div><!-- .post-thumb-->
 		<div class="penman-postcontent">
-			<div class="penman-post-left">
-				<div class="penman-post-icon-wrapper">                    
-                    <?php
-                      	if( $show_gravatar_option == 0 ){                
-                      	?>
-                  		<i class="fa fa-pencil"></i>
-                			<?php }
-                      	else{
-	                    $user = wp_get_current_user();	 
-							if ( $user ) :
-							    ?>
-							    <img src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
-							<?php endif; 
-					  }?>			
-				</div>
-				<div class="authorinfo">
-					<?php
-					if ( 'post' === get_post_type() && $show_meta_field == 1 ) : ?>
-					<div class="entry-meta">
-						<?php penman_posted_on(); ?>
-					</div><!-- .entry-meta -->
-					<?php
-					endif; ?>
-				</div>
-			</div>
 			<header class="entry-header">
 				<?php
 					the_title( '<h1 class="entry-title">', '</h1>' );
