@@ -401,8 +401,34 @@ add_shortcode('myphp', 'my_php_Include');
 
 $dbh = new PDO('mysql:dbname=mydb;host=localhost', 'wordpressuser', 'Vista');
 // $sql_nagoya = 'select * from subjects_hiroshima';
-$sql_nagoya = 'select * from subjects_nagoya ORDER BY id_order ASC';
+$sql_nagoya = 'select * from subjects_cars ORDER BY id_order ASC';
 
+function check_deadline_top_($attr) {
+	$today = new DateTime();
+	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
+	try{
+		ob_start();
+		global $dbh;
+		global $sql_nagoya;
+		foreach ($dbh->query($sql_nagoya) as $row) {
+			if(strcmp($attr[0],$row['id_subject']) == 0){
+				if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
+					print '<center>お申し込み受付中<br>お申し込みフォームはページ下部にあります</center>';
+				}
+				else{
+					print '<center>募集を締め切りました</center>';
+				}
+				print('<br />');
+			}
+		}
+		return ob_get_clean();
+	}catch (PDOException $e){
+		print('Error:'.$e->getMessage());
+		die();
+	}
+
+}
+add_shortcode('check_deadline_top', 'check_deadline_top_');
 function check_deadline_($attr) {
 	$today = new DateTime();
 	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
@@ -412,9 +438,8 @@ function check_deadline_($attr) {
 		global $sql_nagoya;
 		foreach ($dbh->query($sql_nagoya) as $row) {
 			if(strcmp($attr[0],$row['id_subject']) == 0){
-				// if (!is_null($row['apply_deadline'])){
 				if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
-					print '<center>お申し込み受付中<br>申し込まれる方は以下のフォームに入力して、最終行の送信ボタンを押してください。</center>';
+					print '<center>申し込まれる方は以下のフォームに入力して、最終行の送信ボタンを押してください。</center><br>';
 					echo do_shortcode('[contact-form-7 id="398" title="cource_apply_template"]');
 				}
 				else{
@@ -439,11 +464,12 @@ function show_subject_detile_($attr) {
 	global $global_location;
 	global $dbh;
 	try{
-		$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$attr[0]. "'";
+		$sql_nagoya_ = "select * from subjects_cars where id_subject ='" .$attr[0]. "'";
 		foreach ($dbh->query($sql_nagoya_) as $row){}
 		$opening_date_string_ = $row['opening_date_string'];
 		$apply_deadline_ = $row['apply_deadline'];
 		$name_child_ = $row['name_child'];
+		$location_ = $row['location'];
 		if (is_null($row['id_parent'])){ // if no child
 			$global_name_sub = $row['name_subject'];
 			$global_fee = $row['fee'];
@@ -451,7 +477,7 @@ function show_subject_detile_($attr) {
 
 		}
 		else{
-			$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
+			$sql_nagoya_ = "select * from subjects_cars where id_subject ='" .$row['id_parent']. "'";
 			foreach ($dbh->query($sql_nagoya_) as $row){}
 			$global_name_sub = $row['name_subject'].'_'.$name_child_;
 			$global_fee = $row['fee'];
@@ -463,30 +489,31 @@ function show_subject_detile_($attr) {
 <tr>
 <?php
 		print '<td width="25%"><b>開講日</b><td width="75%">'.$opening_date_string_.'</td><tr>';
-		print '<td>開講時間<td>'.$row['opening_time'].'</td><tr>';
-		print '<td>受講申込期限<td>'.$apply_deadline_.'</td><tr>';
-		print '<td>受講料<td>'.$global_fee.'円(税込)</td><tr>';
+		print '<td><b>開講時間</b><td>'.$row['opening_time'].'</td><tr>';
+		print '<td><b>受講申込期限</b><td>'.$apply_deadline_.'</td><tr>';
+		print '<td><b>受講料</b><td>'.$global_fee.'円(税込)</td><tr>';
 
 		if(!is_null($row['capacity'])){
-			print '<td>定員(先着順)<td>'.$row['capacity'].'名</td><tr>';
+			print '<td><b>定員(先着順)</b><td>'.$row['capacity'].'名</td><tr>';
 		}
 
-		print '<td>会場<td>'.$row['location'].'</td><tr>';
-		print '<td>講師<td>'.$row['lecturer'].'</td><tr>';
-		print '<td>講座概要<td>'.$row['course_outline'].'</td><tr>';
-		print '<td>実習機材など<td>'.$row['equipment'].'</td><tr>';
-		print '<td>到達目標<td>'.$row['goal'].'</td><tr>';
-		print '<td>対象者<td>'.$row['target'].'</td><tr>';
-		print '<td>前提条件<td>'.$row['precondition'].'</td><tr>';
-		print '<td>講義計画<td>'.$row['lecture_plan'].'</td><tr>';
-		print '<td>評価方法<td>'.$row['evaluation'].'</td><tr>';
+		print '<td><b>会場</b><td>'.$location_.'</td><tr>';
+		print '<td><b>講師</b><td>'.$row['lecturer'].'</td><tr>';
+		print '<td><b>講座概要</b><td>'.$row['course_outline'].'</td><tr>';
+		print '<td><b>実習機材など</b><td>'.$row['equipment'].'</td><tr>';
+		print '<td><b>到達目標</b><td>'.$row['goal'].'</td><tr>';
+		print '<td><b>対象者</b><td>'.$row['target'].'</td><tr>';
+		print '<td><b>前提条件</b><td>'.$row['precondition'].'</td><tr>';
+		print '<td><b>講義計画</b><td>'.$row['lecture_plan'].'</td><tr>';
+		print '<td><b>評価方法</b><td>'.$row['evaluation'].'</td><tr>';
 		if(!is_null($row['review'])){
-			print '<td>これまでに受講された方々の声<td>'.$row['review'].'</td><tr>';
+			print '<td><b>これまでに受講された方々の声</b><td>'.$row['review'].'</td><tr>';
 		}
-		print '<td>備考<td>'.$row['remarks'].'</td><tr>';
+		print '<td><b>備考</b><td>'.$row['remarks'].'</td><tr>';
 ?>
 </table>
 <?php
+		return ob_get_clean();
 	}catch (PDOException $e){
 		print('Error:'.$e->getMessage());
 		die();
@@ -505,7 +532,7 @@ function show_subjetList_car_($attr) {
 		global $sql_nagoya;
 		$num = 0;
 		foreach ($dbh->query($sql_nagoya) as $row) {
-			if ((!is_null($row['name_subject']) and ($row['type'] == $attr[0]))){
+			if ((!is_null($row['name_subject']) and (floor($row['id_order']/100) == $attr[0]))){
 				print '<td width="33%"><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td>';
 				$num += 1;
 				if($num %3 == 0){
@@ -536,7 +563,7 @@ function show_subjetList_IoTs_($attr) {
 		$sql_hiroshima = 'select * from subjects_IoTs ORDER BY id_order ASC';
 		$num = 0;
 		foreach ($dbh->query($sql_hiroshima) as $row) {
-			if ((!is_null($row['name_subject']) and ($row['type'] == $attr[0]))){
+			if ((!is_null($row['name_subject']) and (floor($row['id_order']/100) == $attr[0]))){
 				print '<td width="33%"><u><h4><a href="'.$row['URL'].'">'.$row['name_subject'].'</a></h4></u></td>';
 				$num += 1;
 				if($num %3 == 0){
@@ -558,7 +585,7 @@ add_shortcode('show_subjetList_IoTs', 'show_subjetList_IoTs_');
 function show_subjetSchedule_nagoya_($attr) {
 	$today = new DateTime();
 	$today->setTimeZone(new DateTimeZone('Asia/Tokyo'));
-	$sql_nagoya = 'select * from subjects_nagoya ORDER BY opening_date_begin ASC';
+	$sql_nagoya = 'select * from subjects_cars ORDER BY opening_date_begin ASC';
 	$f_start = 0;
 
 	try{
@@ -596,7 +623,7 @@ function show_subjetSchedule_nagoya_($attr) {
 						}
 					}
 					else{
-						$sql_nagoya_ = "select * from subjects_nagoya where id_subject ='" .$row['id_parent']. "'";
+						$sql_nagoya_ = "select * from subjects_cars where id_subject ='" .$row['id_parent']. "'";
 						foreach ($dbh->query($sql_nagoya_) as $row_p){}
 						if(strtotime($today->format('Y-m-d H:i:s')) < strtotime($row['apply_deadline'])){
 							print '<td>'.$row['opening_date_string'].'<td>'.$row_p['opening_time'].'<td><u><h4><a href="'.$row['URL'].'">'.$row_p['name_subject'].'_'.$row['name_child'].'</a></u> <font color="red">募集中</font></h4></td><tr>';
